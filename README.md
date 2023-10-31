@@ -15,11 +15,11 @@ Prerequisite:
 •	A GCP account.  
 
 After completing this lab, you will be able to:  
-•	Navigate the Glue application. 
-•	Create a data crawler using Glue. 
-•	Create a schema and tables in Glue. 
-•	Create a lambda function. 
-•	Query S3 data from Athena, Redshift, and GCS using the Glue data catalog. 
+•	Navigate the Glue application  
+•	Create a data crawler using Glue   
+•	Create a schema and tables in Glue   
+•	Create a lambda function  
+•	Query S3 data from Athena, Redshift, and GCS using the Glue data catalog  
 
 ## Execution
 
