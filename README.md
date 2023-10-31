@@ -108,7 +108,7 @@ Note that we are only querying data from redshift, we can choose data source as 
 ### AWS Secrets Manager
 31. Open AWS Secrets Manager, create a new secret. Choose secret type as “Other type of secret”. Copy contents of JSON key file and paste it in plain-text section.
 
-<img width="1470" alt="Screenshot 2023-10-31 at 4 51 46 PM" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/9f8e7e26-bacd-41bd-aa86-7fc5eda7dad2">
+<img width="477" alt="Screenshot 2023-10-31 at 4 51 46 PM" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/9f8e7e26-bacd-41bd-aa86-7fc5eda7dad2">
 
 32. Provide a name for your secret, keep all other settings as default and finally create secret. Once created, it'll look like this:
 
