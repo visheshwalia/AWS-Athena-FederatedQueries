@@ -57,7 +57,7 @@ Once created, You can refer to this link to check how can you upload sample data
 14. In Athena console, choose "Data Sources" from the left window pane. Create a new data source, choose Amazon Redshift as a data source.
 15. Fill out a name for data source, in the connection section choose to create a new lambda function, it'll take you to another tab for configuring your new lambda function.
 16. Provide an application name, secret prefix (you can choose to write anything), spill bucket path, security group and subnets.
-17. Create a default connection string from this format: "redshift://<JDBC URL>?user=<redshift username>&password=<redshift password>" and provide it in the lambda function as well.
+17. Create a default connection string from this format: "redshift://<JDBC URL>?user=/<redshift-username/>&password=/<redshift-password/>" and provide it in the lambda function as well.
 18. Once created, you'll find your lambda function and application in Lambda console. If it doesn't deploy successfully, you can delete the stack from CloudFormation, check all the values are correct and try to create it again.
 19. Come back to Athena data source configuration, choose newly created lambda function and finally create your data source.
 20. Check 2 things:  
