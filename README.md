@@ -1,4 +1,4 @@
-# Using Federated Queries With Athena
+## Using Federated Queries With Athena
 
 Federated queries in modern data warehouses refer to the capability to query and retrieve data from multiple, disparate sources, both within and outside the data warehouse, in a unified and seamless manner.
 
