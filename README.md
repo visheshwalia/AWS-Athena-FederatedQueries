@@ -8,10 +8,10 @@ Federated queries have expanded to facilitate the querying of data hosted in var
 
 Develop and execute a multiple source federated query using Athena, Redshift, AWS Glue, Lambda Functions, Secrets Manager, and GCP Cloud Storage(GCS).
 
-Prerequisite:
+Prerequisite:  
 •	You'll need to have two S3 buckets created, one with S3 data file(NaturalDisaster.Txt used for this demo), and
-  one bucket required for Athena results.  
-•	You'll need to have a redshift database populated with sample tickit data(tickit used for this demo). Also make a note of JDBC URL, security group and subnets of your redshift instance.
+  one bucket required for Athena results.    
+•	You'll need to have a redshift database populated with sample tickit data(tickit used for this demo). Also make a note of JDBC URL, security group and subnets of your redshift instance.  
 •	A GCP account.  
 
 After completing this lab, you will be able to:  
@@ -26,6 +26,7 @@ After completing this lab, you will be able to:
 1. Once you have uploaded you data in S3, it'll look something like this:
 
 <img width="468" alt="image" src="https://github.com/visheshwalia/AWS-ETL-Pipeline/assets/49346509/ac516139-0388-4a22-967c-cd9a280ed1cc">
+
 ### Creating Glue crawler for cataloging data in S3.
 2. Search for Glue services in AWS console. Find Crawlers in left window pane. Click on create crawler.
 3. Input the name for your crawler, choose "Data Store" as source type, Choose S3 as data source and provide awsweatherdata bucket path in the include path variable.
@@ -60,8 +61,14 @@ You can refer to this link to check how can you upload sample data in redshift f
 18. Once created, you'll find your lambda function and application in Lambda console. If it doesn't deploy successfully, you can delete the stack from CloudFormation, check all the values are correct and try to create it again.
 19. Come back to Athena data source configuration, choose newly created lambda function and finally create your data source.
 20. Check 2 things:  
-    •	Does your associated IAM role in redshift has access to S3 buckets. If no role is attached, attach one and provide sufficient access.  
-    •	Go to your lambda function configurations and check if environment variables has redshift default connection string present in a key-value pair.   
+    •	Does your associated IAM role in redshift has access to S3 buckets. If no role is attached, attach one and provide sufficient access.
+
+    ![image](https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/39a172a5-5db1-429b-af29-698614a7f88d)
+
+    •	Go to your lambda function configurations and check if environment variables has redshift default connection string present in a key-value pair.
+
+    ![image](https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/cde94aff-7cca-42c8-98aa-86981bda3634)
+ 
 22. You'll need to create a VPC endpoint as well. In VPC service, choose the VPC associated with Redshift and Lambda function. In the left window pane choose "Endpoints".
 23. Create a new endpoint, Service Category: AWS Services, Services: S3 (choose the region of your bucket), Endpoint type: Gateway. It'll allow your lambda function to access S3 bucket.
 
@@ -155,7 +162,7 @@ Note that we are only querying data from redshift, we can choose data source as 
  
 <img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/1b2be46d-e7da-42b0-8ab5-ad38f2d6e347">
 
-
+and this is how you can query different disparate sources data from AWS Athena. 
 
 
 
