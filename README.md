@@ -11,7 +11,7 @@ Develop and execute a multiple source federated query using Athena, Redshift, AW
 Prerequisite:  
 •	You'll need to have two S3 buckets created, one with S3 data file(NaturalDisaster.Txt used for this demo), and
   one bucket required for Athena results.    
-•	You'll need to have a redshift database populated with sample tickit data(tickit used for this demo). Also make a note of JDBC URL, security group and subnets of your redshift instance.  
+•	You'll need to have a redshift database populated with sample tickit data(tickit used for this demo). Also make a note of JDBC URL, security group and subnets of your redshift instance. 
 •	A GCP account.  
 
 After completing this lab, you will be able to:  
@@ -50,8 +50,8 @@ After completing this lab, you will be able to:
 <img width="468" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/abf73859-1c14-482d-afd3-ed745a2f1f17">
 
 ### Redshift database Check
-13. Now for setting up federated queries for Redshift in Athena. Note: You must have a redshift database created with tickit data populated.
-You can refer to this link to check how can you upload sample data in redshift from S3 : https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-sample-db.html
+13. You must have a redshift database created with tickit data populated. For this demonstration, I have used Redshift Serverless. You can simply start by creating a namespace and a workgroup.
+Once created, You can refer to this link to check how can you upload sample data in redshift from S3 : https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-sample-db.html.
 
 ### Creating Redshift data source in Athena
 14. In Athena console, choose "Data Sources" from the left window pane. Create a new data source, choose Amazon Redshift as a data source.
