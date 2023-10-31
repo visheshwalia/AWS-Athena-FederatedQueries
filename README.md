@@ -21,7 +21,7 @@ After completing this lab, you will be able to:
 •	Create a lambda function  
 •	Query S3 data from Athena, Redshift, and GCS using the Glue data catalog  
 
-## Execution
+## Implementation: Redshift Federated Queries.
 
 1. Once you have uploaded you data in S3, it'll look something like this:
 
@@ -56,9 +56,9 @@ You can refer to this link to check how can you upload sample data in redshift f
 17. Create a default connection string from this format: "redshift://<JDBC URL>?user=<redshift username>&password=<redshift password>" and provide it in the lambda function as well.
 18. Once created, you'll find your lambda function and application in Lambda console. If it doesn't deploy successfully, you can delete the stack from CloudFormation, check all the values are correct and try to create it again.
 19. Come back to Athena data source configuration, choose newly created lambda function and finally create your data source.
-20. Check 2 things:
-    •	Does your associated IAM role in redshift has access to S3 buckets. If no role is attached, attach one and provide sufficient access.
-    •	Go to your lambda function configurations and check if environment variables has redshift default connection string present in a key-value pair. 
+20. Check 2 things:  
+    •	Does your associated IAM role in redshift has access to S3 buckets. If no role is attached, attach one and provide sufficient access.  
+    •	Go to your lambda function configurations and check if environment variables has redshift default connection string present in a key-value pair.   
 22. You'll need to create a VPC endpoint as well. In VPC service, choose the VPC associated with Redshift and Lambda function. In the left window pane choose "Endpoints".
 23. Create a new endpoint, Service Category: AWS Services, Services: S3 (choose the region of your bucket), Endpoint type: Gateway. It'll allow your lambda function to access S3 bucket.
 
@@ -78,9 +78,36 @@ Note that we are only querying data from redshift, we can choose data source as 
     
 <img width="468" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/94015555-2339-440e-8a85-7cac014c01d7">
 
-27. 
+## Implementation: GCS Federated Queries.
 
-29. 
+27. Open your GCP account console, create a new project, search for Cloud Storage service and create a new bucket.
+
+28. Upload events.csv file to the bucket. Note that Athena connector for now can only fetch .csv or parquet file format from GCS. Make sure your object in GCS follows the same extension.
+
+<img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/1f8c8250-0910-4342-b12d-8b1f0e03d792">
+
+29. After uploading object, you need to create a Service Account with Editor/Owner role in IAM service in GCP. You'll add a key to this role that will allow our lambda connector function in AWS to connect with GCS and fetch data.
+
+<img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/0b377e7c-3061-4aea-96a2-44d6d9eff177">
+
+30. Add a key for your service account and download it in JSON format. We'll store this key in AWS Secrets Manager for lambda function to access.
+
+<img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/83615b1b-55e6-4b9c-ae2e-7bcff2250115">
+
+31. Open AWS Secrets Manager, create a new secret. Choose secret type as “Other type of secret”. Copy contents of JSON key file and paste it in plain-text section.
+
+<img width="1470" alt="Screenshot 2023-10-31 at 4 51 46 PM" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/9f8e7e26-bacd-41bd-aa86-7fc5eda7dad2">
+
+32. Provide a name for your secret, keep all other settings as default and finally create secret. Once created, it'll look like this:
+
+<img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/2451abb2-1b2a-4a11-b9b7-5bf16baa8ecb">
+
+33. Now, go to athena console, add a new data source, choose Google Cloud Storage as data source.
+
+<img width="477" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/9d87bc28-5bbc-4553-9507-6298186da2c2">
+
+34. 
+
 
 
 
