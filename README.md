@@ -81,7 +81,7 @@ Once created, You can refer to this link to check how can you upload sample data
 
 Note that we are only querying data from redshift, we can choose data source as the one we created for redshift in athena and database name as in your redshift instance.
 
-25. When we'll query data from multiple source in a single query, we'll need to use AWSDataCatalog as your data source. You'll need to add "lambda:<lambda function name>" to query data like shown in screenshot below.
+25. When we'll query data from multiple source in a single query, we'll need to use AWSDataCatalog as your data source. You'll need to add "lambda:<lambda-function-name>" to query data like shown in screenshot below.
 
 <img width="468" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/3fa7c252-3f84-453e-bed1-0be5ac906005">
 
