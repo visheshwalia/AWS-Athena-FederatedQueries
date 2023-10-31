@@ -12,7 +12,6 @@ Prerequisite:
 •	You'll need to have two S3 buckets created, one with S3 data file(NaturalDisaster.Txt used for this demo), and
   one bucket required for Athena results.    
 •	You'll need to have a redshift database populated with sample tickit data(tickit used for this demo). Also make a note of JDBC URL, security group and subnets of your redshift instance. 
-  
 •	A GCP account.  
 
 After completing this lab, you will be able to:  
