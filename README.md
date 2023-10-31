@@ -57,7 +57,7 @@ Once created, You can refer to this link to check how can you upload sample data
 14. In Athena console, choose "Data Sources" from the left window pane. Create a new data source, choose Amazon Redshift as a data source.
 15. Fill out a name for data source, in the connection section choose to create a new lambda function, it'll take you to another tab for configuring your new lambda function.
 16. Provide an application name, secret prefix (you can choose to write anything), spill bucket path, security group and subnets.
-17. Create a default connection string from this format: "redshift://<JDBC URL>?user=/<redshift-username/>&password=/<redshift-password/>" and provide it in the lambda function as well.
+17. Create a default connection string from this format: "redshift://JDBC-URL?user=redshift-username&password=redshift-password" and provide it in the lambda function as well.
 18. Once created, you'll find your lambda function and application in Lambda console. If it doesn't deploy successfully, you can delete the stack from CloudFormation, check all the values are correct and try to create it again.
 19. Come back to Athena data source configuration, choose newly created lambda function and finally create your data source.
 20. Check 2 things:  
@@ -81,7 +81,7 @@ Once created, You can refer to this link to check how can you upload sample data
 
 Note that we are only querying data from redshift, we can choose data source as the one we created for redshift in athena and database name as in your redshift instance.
 
-25. When we'll query data from multiple source in a single query, we'll need to use AWSDataCatalog as your data source. You'll need to add "lambda:<lambda-function-name>" to query data like shown in screenshot below.
+25. When we'll query data from multiple source in a single query, we'll need to use AWSDataCatalog as your data source. You'll need to add "lambda:lambda-function-name" to query data like shown in screenshot below.
 
 <img width="468" alt="image" src="https://github.com/visheshwalia/AWS-Athena-FederatedQueries/assets/49346509/3fa7c252-3f84-453e-bed1-0be5ac906005">
 
