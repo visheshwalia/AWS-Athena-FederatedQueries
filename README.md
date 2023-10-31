@@ -9,7 +9,8 @@ Federated queries have expanded to facilitate the querying of data hosted in var
 Develop and execute a multiple source federated query using Athena, Redshift, AWS Glue, Lambda Functions, Secrets Manager, and GCP Cloud Storage(GCS).
 
 Prerequisite:
-•	You'll need to have two S3 buckets created, one with S3 data file(awsweatherdata), and 		one spill bucket required for Athena results.  
+•	You'll need to have two S3 buckets created, one with S3 data file(awsweatherdata), and
+  one spill bucket required for Athena results.  
 •	You'll need to have a redshift database populated with sample tickit data(tickit).   
 •	A GCP account.  
 
