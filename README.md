@@ -4,6 +4,19 @@ Federated queries in modern data warehouses refer to the capability to query and
 
 Federated queries have expanded to facilitate the querying of data hosted in various cloud provider services. For example, it is now feasible to query data stored in Google Cloud Platform (GCP) Cloud Storage or BigQuery by utilizing AWS Athena and vice versa. This inter-cloud querying capability is now supported across multiple cloud vendors.
 
+## Services Overview  
+• Lambda: AWS Lambda is a serverless compute service that lets you run code in response to events, handling tasks without provisioning or managing servers.
+
+• Glue: AWS Glue is a fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analytics.
+
+• Redshift: Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud, optimized for data analysis.
+
+• Athena: Amazon Athena is an interactive query service that allows you to analyze data in Amazon S3 using standard SQL.
+
+• Secrets Manager: AWS Secrets Manager helps you protect access to your applications, services, and IT resources without the upfront investment and on-going maintenance costs of operating   your infrastructure.
+
+• GCS (Google Cloud Storage): Google Cloud Storage is a scalable, fully-managed object storage service that allows you to store and retrieve data in the Google Cloud Platform.
+
 ## Objective
 
 Develop and execute a multiple source federated query using Athena, Redshift, AWS Glue, Lambda Functions, Secrets Manager, and GCP Cloud Storage(GCS).
